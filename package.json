@@ -1,6 +1,7 @@
 {
   "name": "chat-app",
   "version": "1.0.0",
+  "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -13,17 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "indexjs": "^1.0.2",
     "socket.io": "^2.0.4"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Blandry1/chat-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Blandry1/chat-app/issues"
-  },
-  "homepage": "https://github.com/Blandry1/chat-app#readme",
-  "description": ""
+  }
 }
