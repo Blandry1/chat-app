@@ -1,18 +1,18 @@
-var socket = io(); //*** CHECK HERE!!!
+var socket = io();
 
 socket.on('connect', function ()  {
   console.log('Connected to server');
 
-  socket.emit('createEmail', {
-    to: 'jen@example.com',
-    text: 'Hey. This is Andrew.'
+  socket.emit('createMessage', {
+    from: 'benten',
+    text: 'whats up'
   });
+});
+
+socket.on('newMessage', function (message) {
+  console.log('New message received', message )
 });
 
 socket.on('disconnect', function () {
   console.log('Disconnected from server');
-});
-
-socket.on('newEmail', function (email) {
-  console.log('New email', email);
 });

@@ -12,17 +12,21 @@ var io = socketIO(server);
 
 app.use(express.static(publicPath));  //step1: use express middleware to grab file specified.
 
-io.on('connection', function (socket) { //step3
+io.on('connection',  (socket) => { //step3: opens input/output interface
   console.log('New user connected');
 
-  socket.emit('newEmail', { //send data to socket.on
-    from: 'mike@example.com',
-    text: 'Hey. Hows it going?',
+  socket.emit('newMessage', {
+    from: 'andrew',
+    text: 'I am the hero!',
     createdAt: 123
   });
-
-  socket.on('createEmail', function (newEmail) { //receive data from 'socket.emit('<name>')'
-    console.log('createEmail', newEmail);
+  socket.on('createMessage', (message) => {
+    console.log('Create new message', message);
+    io.emit('newMessage', {
+      from: message.fron,
+      text: message.text,
+      createdAt: new Date().getTime()
+    });
   });
 
   socket.on('disconnect', () => {
