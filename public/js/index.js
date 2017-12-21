@@ -1,6 +1,6 @@
 var socket = io();
 
-socket.on('connect', function ()  {
+socket.on('connect', function () {
   console.log('Connected to server');
 });
 
@@ -17,16 +17,15 @@ socket.on('newMessage', function (message) {
     createdAt: formattedTime
   });
 
-  jQuery('#message').append(html);
-
+  jQuery('#messages').append(html);
 });
 
 socket.on('newLocationMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');
   var template = jQuery('#location-message-template').html();
   var html = Mustache.render(template, {
-    url: message.url,
     from: message.from,
+    url: message.url,
     createdAt: formattedTime
   });
 
@@ -49,10 +48,10 @@ jQuery('#message-form').on('submit', function (e) {
 var locationButton = jQuery('#send-location');
 locationButton.on('click', function () {
   if (!navigator.geolocation) {
-    return alert('Geolocation not supported by your browser');
+    return alert('Geolocation not supported by your browser.');
   }
 
-locationButton.attr('disabled', 'disabled').text('Sending location...');
+  locationButton.attr('disabled', 'disabled').text('Sending location...');
 
   navigator.geolocation.getCurrentPosition(function (position) {
     locationButton.removeAttr('disabled').text('Send location');
@@ -62,6 +61,6 @@ locationButton.attr('disabled', 'disabled').text('Sending location...');
     });
   }, function () {
     locationButton.removeAttr('disabled').text('Send location');
-    alert('Unable to fetch Location.');
+    alert('Unable to fetch location.');
   });
 });
