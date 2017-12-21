@@ -1,0 +1,3 @@
+-complete Udemy Chat-app lessons
+-change timestamp depending on how many days the last message was received (check playground/time.js for code & add it to index.js)
+-add multiple user locations pings on one google.map
