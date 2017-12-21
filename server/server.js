@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 
 
 const {generateMessage, generateLocationMessage} = require('./utils/message');
-const {isRealString} = require('./utils/validation.js');
+const {isRealString} = require('./utils/validation');
 
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
