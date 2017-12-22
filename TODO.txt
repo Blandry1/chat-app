@@ -2,6 +2,8 @@
 -change timestamp depending on how many days the last message was received (check playground/time.js for code & add it to index.js)
 -add multiple user locations pings on one google.map
 
+--How do you git pull? & git diff?
+--Why is message.test.js failing on 'npm test'?
 
 Note:
 -file index.html: The css color scheme changes on refresh for "Join chat room" page
