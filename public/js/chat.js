@@ -1,3 +1,5 @@
+//const {variousTimes} = require('./js/chat');
+
 var socket = io();
 
 function scrollToBottom () {
@@ -42,6 +44,16 @@ socket.on('updateUserList', function (users) {
 
   jQuery('#users').html(ol);
 });
+
+
+socket.emit('messageHistory', function () {
+
+});
+
+socket.emit('updateTimestamp', function () {
+//  messageHistory.forEach() 
+});
+
 
 socket.on('newMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');

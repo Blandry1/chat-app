@@ -1,10 +1,17 @@
--complete Udemy Chat-app lessons
--change timestamp depending on how many days the last message was received (check playground/time.js for code & add it to index.js)
--add multiple user locations pings on one google.map
+In-Process:
+-change timestamp depending when it was sent.
+--call time.js at periodic intervals or at a certain trigger.
+-save message history of a chat room
 
---How do you git pull? & git diff?
---Why is message.test.js failing on 'npm test'?
+Todo:
+-add multiple user locations pings on one google.map
+-add a facebook login requirement
+
 
 Note:
 -file index.html: The css color scheme changes on refresh for "Join chat room" page
 --probably bc of css script is loaded after html page. And not enough time to load before the page gets displayed.
+
+How-To:
+--How do you git pull? & git diff?
+--Why is message.test.js failing on 'npm test'?
